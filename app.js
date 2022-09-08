@@ -1,7 +1,8 @@
-// top-nav dropdowns click events
 
-const dropdownToggle = (e) =>{
-    var svg = e.currentTarget.querySelector("svg");
+// eventlistener for all dropdowns -> desktop +mobile
+document.querySelectorAll(".dropdown").forEach( e =>{
+    e.addEventListener("click", e => {
+        var svg = e.currentTarget.querySelector("svg");
         var block = e.currentTarget.querySelector("ul");
         console.log(e.currentTarget.parentElement);
         console.log(svg.getAttribute("transform"));
@@ -11,11 +12,8 @@ const dropdownToggle = (e) =>{
         } else{
             svg.removeAttribute("transform");
             block.style.display = "none";
-        }}
-
-// eventlistener for all dropdowns -> desktop +mobile
-document.querySelectorAll(".dropdown").forEach( e =>{
-    e.addEventListener("click", dropdownToggle(e))
+        }
+    })
 });
 
 
